@@ -1,11 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập mảng</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-cover bg-contain bg-center p-6"
+    style="
+      background-image: url(./img/buddha.png);
+    "
+  >
+    <div class="mx-auto max-w-4xl bg-[#DBF1E5] rounded-lg p-6 opacity-90">
+      <!-- nhập số và thêm vào mảng -->
+      <div class="mt-6 bg-[#CCE7E7] p-4 rounded-lg">
+        <label
+          class="font-medium text-2xl text-[#406093] uppercase p-2 rounded mb-10"
+        >
+          Nhập lần lượt từng số để thêm vào mảng</label
+        >
+        <input
+          type="text"
+          id="input-number"
+          placeholder="Nhập số"
+          class="w-full border border-indigo-600 rounded p-3 mt-6 mb-3"
+        />
+
+        <button
+          id="btn-add"
+          class="bg-indigo-400 cursor-pointer text-white p-2 rounded-lg mt-2"
+        >
+          Thêm số
+        </button>
+
+        <p
+          id="result-array"
+          class="bg-[#408A71] text-[#fff] p-3 rounded-lg mt-3"
+        >
+          Mảng chính:
+        </p>
+      </div>
+      <!-- bài 1 -->
+      <div class="mt-6 bg-[#CCE7E7] p-4 rounded-lg">
+        <button
+          id="btn-sum-positive"
+          class="bg-indigo-400 text-white p-2 rounded cursor-pointer"
+        >
+          1. Tổng các số dương trong mảng
+        </button>
+        <p id="result-1" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 2 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button
+          id="btn-count-positive"
+          class="bg-indigo-400 text-white p-2 rounded cursor-pointer"
+        >
+          2. Đếm có bao nhiêu số dương trong mảng
+        </button>
+        <p id="result-2" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 3 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button id="btn-min" class="bg-indigo-400 text-white p-2 rounded cursor-pointer">
+          3. Tìm số nhỏ nhất trong mảng
+        </button>
+        <p id="result-3" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 4 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button
+          id="btn-min-positive"
+          class="bg-indigo-400 text-white p-2 rounded cursor-pointer"
+        >
+          4. Tìm số dương nhỏ nhất trong mảng
+        </button>
+        <p id="result-4" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 5 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button id="btn-last-even" class="bg-indigo-400 text-white p-2 rounded cursor-pointer">
+          5. Tìm số chẵn cuối cùng trong mảng
+        </button>
+        <p id="result-5" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 6 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <h2 class="bg-indigo-400 text-white p-2 rounded mb-4">
+          6. Đổi chỗ 2 giá trị trong mảng theo vị trí
+        </h2>
+
+        <div class="flex gap-3">
+          <input
+            type="text"
+            id="input-index1"
+            placeholder="Nhập vị trí thứ 1"
+            class="border border-indigo-600 rounded p-2 w-full"
+          />
+          <input
+            type="text"
+            id="input-index2"
+            placeholder="Nhập vị trí thứ 2"
+            class="border border-indigo-600 rounded p-2 w-full"
+          />
+        </div>
+
+        <button id="btn-swap" class="bg-indigo-400 text-white p-2 mt-4 rounded cursor-pointer">
+          Đổi chỗ
+        </button>
+        <p id="result-6" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 7 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button id="btn-sort" class="bg-indigo-400 text-white p-2 rounded cursor-pointer">
+          7. Sắp xếp mảng theo thứ tự tăng dần
+        </button>
+        <p id="result-7" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 8 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button
+          id="btn-first-prime"
+          class="bg-indigo-400 text-white p-2 rounded cursor-pointer"
+        >
+          8. Tìm số nguyên tố đầu tiên trong mảng
+        </button>
+        <p id="result-8" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 9 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <h2 class="bg-indigo-400 text-white p-2 rounded mb-4">
+          9. Nhập lần lượt các số thực tạo thêm 1 mảng , đếm số nguyên
+        </h2>
+
+        <input
+          type="text"
+          id="input-real"
+          placeholder="Nhập số"
+          class="border border-indigo-600 rounded p-2 w-full"
+        />
+
+        <button
+          id="btn-add-real"
+          class="bg-indigo-400 text-white p-2 rounded cursor-pointer mt-3"
+        >
+          Thêm số thực
+        </button>
+
+        <p
+          id="result-real-array"
+          class="bg-[#408A71] text-[#fff] p-3 rounded-lg mt-3 "
+        >
+          Mảng bài 9 đã nhập:
+        </p>
+
+        <button
+          id="btn-count-integer"
+          class="bg-indigo-400 text-white p-2 rounded cursor-pointer mt-3"
+        >
+          Đếm số nguyên
+        </button>
+        <p id="result-9" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+
+      <!-- bài 10 -->
+      <div class="mt-4 bg-[#CCE7E7] p-4 rounded-lg">
+        <button id="btn-compare" class="bg-indigo-400 text-white p-2 rounded cursor-pointer">
+          10. So sánh số lượng số dương và số âm
+        </button>
+        <p id="result-10" class="mt-6 p-3 rounded-lg bg-[#4B70E2] text-white">👉</p>
+      </div>
+    </div>
+
+    <script src="/js/btvn.js"></script>
+  </body>
 </html>
